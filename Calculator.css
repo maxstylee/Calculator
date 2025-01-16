@@ -1,0 +1,127 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40pc;
+  background-color: hsl(222, 26%, 31%);
+}
+
+textarea {
+  width: 386px;
+  height: 80px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: hsl(224, 36%, 15%);
+  color: white;
+  text-align: right;
+  vertical-align: middle;
+  padding: 23px;
+  border: none;
+  font-size: xx-large;
+  font-weight: 700;
+  resize: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+textarea::-webkit-scrollbar {
+  width: 15px; 
+}
+textarea::-webkit-scrollbar-track {
+  background-color: hsl(224, 36%, 15%); 
+}
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(60, 54, 92, 0.73);
+  border-radius: 4px;
+  transition: background-color 5.3s ease, transform 15.3s ease; /* Smooth transition */
+}
+/* Active state for the thumb when clicked or dragged */
+textarea::-webkit-scrollbar-thumb:active {
+  background-color: rgba(26, 13, 22, 0.708); /* Change color when active */
+  transform: scale(1.1);
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: hsl(223, 31%, 20%);
+  width: 400px;
+  height: 370px;
+  padding: 15px;
+}
+
+.box .but {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 15px;
+  row-gap: 15px;
+  margin-top: 20px;
+}
+
+.box .but button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: hsl(30, 25%, 89%);
+  font-size: xx-large;
+  font-weight: 900;
+  transition: transform 0.1s ease;
+}
+
+.box .but button:active {
+  transform: scale(0.95);
+}
+
+.box .feet {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 15px;
+}
+
+.box .feet .res {
+  width: 186px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: hsl(225, 21%, 49%);
+  color: white;
+  font-size: large;
+  letter-spacing: 1px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.box .feet .res:active {
+  transform: scale(0.95);
+}
+
+.box .feet .eq {
+  width: 186px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: hsl(6, 63%, 50%);
+  color: white;
+  font-size: large;
+  letter-spacing: 1px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.box .feet .eq:active{
+  transform: scale(0.95);
+}
+
+.box .grid {
+  width: 85px;
+  height: 60px;
+  border-radius: 10px;
+}
