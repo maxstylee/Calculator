@@ -104,52 +104,42 @@ function validateInput() {
     const inputValue = inputElement.value;
 
     if (inputValue.startsWith('+')) {
+
         inputElement.value = '';
     }
     adjustFontSize();
 };
-
-function validateExpression(expression) {
-    
-    const operators = /[\+\-\*\/=]/;
-    const parts = expression.split(operators);
-
-    
-    for (let part of parts) {
-        if (part === '') continue;
-        if (!/^\d+(\.\d+)?$/.test(part)) {
-            return false;
-        }
-    }
-    return true; 
-}
 
 document.getElementById('point').addEventListener('click', function () {
     var inputField = document.getElementById("screen");
     var currentValue = inputField.value;
     var buttonValue = this.textContent;
 
-    if (/[y]$/.test(currentValue)) {
-        inputField.value = '' + buttonValue;
-    }
-
-    // if (currentValue.includes('.')) {
-    //     return;
-    // }
     if (/[+\-*/=]$/.test(currentValue)) {
         inputField.value = currentValue + '0' + buttonValue;
-    }
-    else if (currentValue === '' || ['+', '/'].includes(buttonValue)) {
-        inputField.value = currentValue + '0' + buttonValue;
-    }
+    } 
     else if (/[.]$/.test(currentValue)) {
-        return;
-    }
+        return; 
+    } 
     else {
+        const operators = /[\+\-\*\/=]/;
+        var parts = currentValue.split(operators);
+
+        var lastPart = parts[parts.length - 1];
+        if (lastPart.includes('.')) {
+            return;
+        }
+
         inputField.value = currentValue + buttonValue;
     }
+    if (/[y]$/.test(currentValue)) {
+        inputField.value = '0' + buttonValue;
+    }
+
     adjustFontSize();
 });
+
+
 
 document.getElementById('del').addEventListener('click', function () {
     var inputField = document.getElementById("screen");
