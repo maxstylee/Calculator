@@ -104,29 +104,24 @@ function validateInput() {
     const inputValue = inputElement.value;
 
     if (inputValue.startsWith('+')) {
-
         inputElement.value = '';
     }
     adjustFontSize();
 };
 
 function validateExpression(expression) {
-    // Split the expression by operators (+, -, *, /, =)
+    
     const operators = /[\+\-\*\/=]/;
     const parts = expression.split(operators);
 
-    // Check each part (which should be a number) for the decimal point condition
+    
     for (let part of parts) {
-        // Skip empty parts (they may occur due to consecutive operators like '++' or '5*')
         if (part === '') continue;
-
-        // Test if the part matches the regular expression (single or no decimal point)
         if (!/^\d+(\.\d+)?$/.test(part)) {
-            return false; // If any part is invalid, return false
+            return false;
         }
     }
-
-    return true; // If all parts are valid, return true
+    return true; 
 }
 
 document.getElementById('point').addEventListener('click', function () {
